@@ -1,21 +1,29 @@
 package com.alba.demo.entity;
 
-import javax.persistence.Convert;
-import javax.persistence.Embedded;
-import javax.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Store {
+    @Id
+    @GeneratedValue
     private Long     Id;
     private String   name;
     @Embedded
     private Address  address;
     private String   phone;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CATEGORY_ID")
     private Category category;
+    @ManyToOne(fetch = FetchType.LAZY)
     private User     president;
-
-    @Convert(converter = SubwayJsonConverter.class)
-    private SubwayStation nealByStation;
-
+    @ManyToOne(fetch = FetchType.LAZY)
+    private SubwayStation subwayStation;
 
 }
