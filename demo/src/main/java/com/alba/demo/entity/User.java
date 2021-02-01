@@ -26,7 +26,6 @@ public class User {
     private String name;
     private int age;
     @Enumerated(EnumType.STRING)
-//    @Column(columnDefinition = "ENUM")
     private Gender gender;
     @Embedded
     private Address address;
