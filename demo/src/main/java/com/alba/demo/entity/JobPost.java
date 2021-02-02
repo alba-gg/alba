@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -14,15 +15,20 @@ import javax.persistence.*;
 @AllArgsConstructor
 public class JobPost {
 
-    @Id @GeneratedValue
-    private Long    Id;
-    private String  title;
+    @Id
+    @GeneratedValue
+    private Long Id;
+    private String title;
 
-    @Column(columnDefinition="TEXT")
-    private String  content;
-    private int     hourlyWage;
+    @Column(columnDefinition = "TEXT")
+    private String content;
+    private int hourlyWage;
 
     @Embedded
     private WorkHours workHours;
 
+    private Gender gender;
+    private int age;
+    private int career;
+    private LocalDateTime deadline;
 }

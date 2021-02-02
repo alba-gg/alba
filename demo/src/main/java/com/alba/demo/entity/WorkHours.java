@@ -1,5 +1,7 @@
 package com.alba.demo.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -8,15 +10,11 @@ import java.time.LocalTime;
 
 @Embeddable
 @Getter
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class WorkHours {
     private boolean   negotiation;
     private LocalTime startTime;
     private LocalTime endTime;
-
-    public WorkHours(boolean negotiation, LocalTime startTime, LocalTime endTime) {
-        this.negotiation = negotiation;
-        this.startTime = startTime;
-        this.endTime = endTime;
-    }
 }
