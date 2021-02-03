@@ -12,8 +12,8 @@ import javax.persistence.*;
 @Builder
 public class Store {
     @Id
-    @GeneratedValue
-    private Long     Id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long     id;
     private String   name;
     @Embedded
     private Address  address;

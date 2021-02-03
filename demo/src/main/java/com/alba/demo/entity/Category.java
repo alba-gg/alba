@@ -21,7 +21,7 @@ public class Category {
 
     @Id
     @GeneratedValue
-    private Long   Id;
+    private Long   id;
     private String name;
 
     @OneToMany(mappedBy = "category")
