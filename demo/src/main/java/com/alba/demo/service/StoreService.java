@@ -13,10 +13,10 @@ public class StoreService {
 
     private final StoreRepository storeRepository;
 
-    public List<Store> storeList(String categoryId) {
+    public List<Store> storeList(Long categoryId) {
 
-        return storeRepository.findByCategory(Long.parseLong(categoryId));
-
+//        return storeRepository.findByCategory(Long.parseLong(categoryId));
+        return storeRepository.findByCategory(categoryId);
     }
 
 

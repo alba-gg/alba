@@ -19,6 +19,6 @@ public class StoreController {
 
     @GetMapping("/list")
     public List<Store> getStoreList(@RequestParam(name = "category_id") String categoryId) {
-        return storeService.storeList(categoryId);
+        return storeService.storeList(Long.parseLong(categoryId));
     }
 }
